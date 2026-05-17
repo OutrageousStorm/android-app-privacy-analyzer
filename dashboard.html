@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Android Privacy Analyzer Dashboard</title>
+<style>
+body { background:#0f1117; color:#e2e8f0; font-family:system-ui; margin:0; padding:20px; }
+header { font-size:1.4rem; margin-bottom:30px; }
+.stat { display:inline-block; background:#1a1d27; padding:20px; margin:10px; border-radius:8px; min-width:200px; }
+.stat-num { font-size:2rem; font-weight:bold; color:#38bdf8; }
+.stat-label { color:#64748b; font-size:0.9rem; margin-top:5px; }
+.apps { background:#1a1d27; margin-top:20px; border-radius:8px; overflow:hidden; }
+.app { padding:15px; border-bottom:1px solid #2a2d3a; }
+.app:last-child { border-bottom:none; }
+.app-name { font-weight:600; }
+.danger { color:#f87171; }
+.normal { color:#4ade80; }
+</style>
+</head>
+<body>
+<header>📊 Android Privacy Analyzer</header>
+
+<div class="stat">
+  <div class="stat-num" id="total-apps">—</div>
+  <div class="stat-label">Total Apps Scanned</div>
+</div>
+<div class="stat">
+  <div class="stat-num danger" id="danger-apps">—</div>
+  <div class="stat-label">Apps with Dangerous Perms</div>
+</div>
+<div class="stat">
+  <div class="stat-num normal" id="clean-apps">—</div>
+  <div class="stat-label">Clean Apps</div>
+</div>
+
+<div class="apps" id="app-list"></div>
+
+<script>
+// Placeholder: would be populated by analyze.py output
+const data = {
+  total: 0,
+  dangerous_count: 0,
+  clean_count: 0,
+  apps: []
+};
+document.getElementById('total-apps').textContent = data.total;
+document.getElementById('danger-apps').textContent = data.dangerous_count;
+document.getElementById('clean-apps').textContent = data.clean_count;
+</script>
+</body>
+</html>
