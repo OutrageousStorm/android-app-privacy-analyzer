@@ -1,14 +1,15 @@
 # 🔎 Android App Privacy Analyzer
 
-Analyze installed apps for privacy violations.
+Analyze Android APK for privacy risks — trackers, encryption, network endpoints.
 
 ## Tools
-- `network_spy.py` — monitor server connections
-- `encrypt_detector.py` — find encryption patterns
-- `perm_abuse_detector.py` — detect permission misuse
 
-## Usage
-```bash
-pip install frida-tools
-python3 network_spy.py --app com.example.app
+| Tool | What it does |
+|------|-------------|
+| `analyze.py` | Scan APK for trackers and crypto usage |
+
+## Requirements
+```
+pip install androguard
+apktool in PATH
 ```
